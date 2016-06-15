@@ -161,7 +161,7 @@ type wrappedError struct {
 }
 
 func (w *wrappedError) Error() string {
-	return w.Outer.Error()
+	return w.Outer.Error() + ": " + w.Inner.Error() 
 }
 
 func (w *wrappedError) WrappedErrors() []error {
